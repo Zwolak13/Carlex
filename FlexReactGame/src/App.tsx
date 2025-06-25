@@ -12,8 +12,8 @@ function App() {
 
   return (
     <main className='flex flex-col h-[100vh] w-[100vw] overflow-auto xl:flex-row xl:overflow-hidden'>
-      <Quests questLevel={level} setQuestLevel={setLevel} setAnswer={setAnswerValues} answer={answerValues} className='h-full flex-grow basis-2/5 bg-amber-400 flex justify-center '/>
-      <Gameboard questLevel={level} answer={answerValues} className='h-full flex-grow basis-3/5 bg-blue-200 p0'/>
+      <Quests questLevel={level} setQuestLevel={setLevel} setAnswer={setAnswerValues} answer={answerValues} className='h-full flex-grow basis-2/5 bg-[#2D3748] flex justify-center '/>
+      <Gameboard questLevel={level} answer={answerValues} className='h-full flex-grow basis-3/5 bg-[#2D3748] p0'/>
     </main>
   )
 }

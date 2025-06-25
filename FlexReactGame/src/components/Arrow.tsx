@@ -1,8 +1,12 @@
 import * as React from "react";
 
-const Arrow = (props: React.SVGProps<SVGSVGElement>) => (
+type ArrowProps = {
+  color: string;
+} & React.SVGProps<SVGSVGElement>; // powinno być SVG, nie HTMLDivElement
+
+const Arrow: React.FC<ArrowProps> = ({ color, ...props }) => (
   <svg
-    fill="#000000"
+    fill={color}
     version="1.1"
     id="Capa_1"
     xmlns="http://www.w3.org/2000/svg"
