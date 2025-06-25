@@ -1,0 +1,10 @@
+name = "car-game"
+type = "javascript"
+compatibility_date = "2025-06-25"
+
+[site]
+bucket = "./dist"
+entry-point = "."
+
+[build]
+command = "npm run build"

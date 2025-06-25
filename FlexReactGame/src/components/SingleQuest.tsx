@@ -40,7 +40,7 @@ export default function SingleQuest({
   }, [answer, questLevel]);
 
 
-    function handleAnswerChange(e){
+    function handleAnswerChange(e: React.ChangeEvent<HTMLInputElement>){
         setAnswer(e.target.value);
     }
 

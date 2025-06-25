@@ -27,10 +27,10 @@ export default function Gameboard(
     .map(line =>
       line
         .replace(/display\s*:\s*flex\s*/gi, 'flex')
-        .replace(/justify-content\s*:\s*(flex-start|flex-end|center|space-between|space-around|space-evenly)\s*/gi, (match, val) => {
+        .replace(/justify-content\s*:\s*(flex-start|flex-end|center|space-between|space-around|space-evenly)\s*/gi, ( val) => {
           return justifyMap[val.toLowerCase() as keyof typeof justifyMap] || '';
         })
-        .replace(/align-items\s*:\s*(flex-start|flex-end|center|baseline|stretch)\s*/gi, (match, val) => {
+        .replace(/align-items\s*:\s*(flex-start|flex-end|center|baseline|stretch)\s*/gi, ( val) => {
           return itemsMap[val.toLowerCase() as keyof typeof itemsMap] || '';
         })
     )
