@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+@source inline("justify-{start,end,center,between,around,evenly}");
+@source inline("items-{start,end,center,baseline,stretch}");
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
