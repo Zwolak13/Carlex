@@ -12,7 +12,8 @@ export default function Logo(props: React.HTMLAttributes<HTMLDivElement>) {
         carlex
         <span className="text-orange-500">/&gt;</span>
       </h1>
-      <p className="font-mono text-xl text-gray-500 mt-2">// A Flexbox Game</p>
+      <p className="font-mono text-xl text-gray-500 mt-2">// A Flexbox Game </p>
+      <p className="font-mono text-xl text-gray-500 mt-2">// Inspired by Flexbox Froggy 🐸 </p>
     </div>
   );
 }
