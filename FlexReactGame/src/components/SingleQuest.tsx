@@ -68,8 +68,9 @@ export default function SingleQuest({
     
 
     return (
-        <div className="w-full ">
-            <div id="questChanger" className="h-10 bg-[#4A5568] m-5 mb-0 flex items-center justify-between px-4">
+        <div className="w-full flex flex-col items-center">
+            <div>
+              <div id="questChanger" className="h-10 bg-[#4A5568] m-5 mb-0 flex items-center justify-between px-4">
                 <span className="font-bold">Level: {questLevel+1}</span>
                 <div className="flex items-center gap-4 ">
                     <Arrow color="#E2E8F0" className="w-5 h-5 rotate-180" onClick={handleDecrease}/>
@@ -84,7 +85,8 @@ export default function SingleQuest({
                 </div>
 
                 <p className="text-sm text-gray-500 italic">
-                  * Some levels include additional styles (e.g. margins, paddings) to align elements correctly with the board.
+                  * Some levels include additional styles (e.g. margins, paddings) to align elements correctly with the board.<br/>
+                  * You can also use Tailwind classes
                 </p>
               </div>
 
@@ -100,6 +102,17 @@ export default function SingleQuest({
                     <input className="w-1/2 ml-4" type="text" value={answer} onChange={event => handleAnswerChange(event)}/>
                     <span> {"}"}</span>
                 </div>
+                
+            </div>
+            </div>
+
+            <div className="text-center py-4">
+              <p className="text-sm text-gray-500 italic ">
+                  © {new Date().getFullYear()} Carlex Game – Inspired by <a href="https://flexboxfroggy.com"  className="underline hover:text-yellow-400">Flexbox Froggy</a>.
+                </p>
+                <p className="text-sm text-gray-500 italic">
+                  Powered by <a href="https://github.com/Zwolak13" target="_blank"  className="underline hover:text-yellow-400">@Zwolak13</a>.
+                </p>
             </div>
         </div>
     )

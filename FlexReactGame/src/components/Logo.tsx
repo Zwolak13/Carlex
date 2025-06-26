@@ -13,7 +13,7 @@ export default function Logo(props: React.HTMLAttributes<HTMLDivElement>) {
         <span className="text-orange-500">/&gt;</span>
       </h1>
       <p className="font-mono text-xl text-gray-500 mt-2">// A Flexbox Game </p>
-      <p className="font-mono text-xl text-gray-500 mt-2">// Inspired by Flexbox Froggy 🐸 </p>
+      <p className="font-mono text-xl text-gray-500 mt-2">// Inspired by <a href="https://flexboxfroggy.com" target='_blank' className="hover:text-yellow-400">Flexbox Froggy</a> 🐸 </p>
     </div>
   );
 }
