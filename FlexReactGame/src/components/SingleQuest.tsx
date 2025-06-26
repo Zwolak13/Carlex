@@ -78,7 +78,7 @@ export default function SingleQuest({
                     <Arrow color="#E2E8F0" className="w-5 h-5" onClick={handleIncrease}/>
                 </div>
             </div>
-            <div id="questInfo" className="flex flex-col justify-between h-70 bg-[#1A202C] m-5 mt-0 px-4 pb-4 pt-2">
+            <div id="questInfo" className="flex flex-col justify-between h-60 bg-[#1A202C] m-5 mt-0 px-4 pb-4 pt-2">
                 <div>
                   <h1 className="text-xl text-white pb-2">{quest.title}</h1>
                   <span className="text-gray-300">{quest.description}</span>
@@ -106,7 +106,7 @@ export default function SingleQuest({
             </div>
             </div>
 
-            <div className="text-center py-4">
+            <div className="text-center py-3">
               <p className="text-sm text-gray-500 italic ">
                   © {new Date().getFullYear()} Carlex Game – Inspired by <a href="https://flexboxfroggy.com"  className="underline hover:text-yellow-400">Flexbox Froggy</a>.
                 </p>
