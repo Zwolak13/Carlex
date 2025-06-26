@@ -1,3 +1,4 @@
+
 import SingleQuest from "./SingleQuest";
 
 export default function Quests({
@@ -16,6 +17,7 @@ export default function Quests({
 
     return (
         <div {...props}>
+          
             <SingleQuest questLevel={questLevel} setQuestLevel={setQuestLevel} setAnswer={setAnswer} answer={answer}/>
         </div>
     )
