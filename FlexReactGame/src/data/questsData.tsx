@@ -21,7 +21,7 @@ const quests: Quest[] = [
     id: 0,
     title: 'Flex - Arrange Cars Side by Side',
     values: [],
-    bonusValues: 'md:gap-[15%] gap-[15%]  mx-[5%] pl-10 md:pl-15  pt-2',
+    bonusValues: 'md:gap-[15%] gap-[15%]  mx-[5%] pl-10 md:pl-15  pt-5',
     description: <span>You have multiple cars positioned one behind the other in a single line. However, the road has multiple lanes. Your task is to use CSS <CodeSample >display: flex;</CodeSample> to arrange the cars side by side in a row, so that they appear next to each other horizontally, rather than stacked vertically.</span>,
     levelMap: LEVELONE,
     boardComponents: (
@@ -30,7 +30,7 @@ const quests: Quest[] = [
           colorP='#15a305' 
           colorS='#15a305' 
           idSuffix='1' 
-          className='w-[12%] h-[23%] min-w-[40px] min-h-[20px] mb-3' 
+          className='w-[12%] h-[23%] min-w-[40px] min-h-[20px] mb-3 z-20' 
         />
         <CarComponent 
           colorP='#51a7c9' 
@@ -39,11 +39,13 @@ const quests: Quest[] = [
           className='w-[12%] h-[23%] min-w-[40px] min-h-[20px] mb-3' 
         />
         <CarComponent 
+        colorP='#943e3e'
+        colorS='#943e3e'
           className='w-[12%] h-[23%] min-w-[40px] min-h-[20px] mb-3'
         />
         <CarComponent 
           className='w-[12%] h-[23%] min-w-[40px] min-h-[20px] mb-3'
-        />
+        /> 
       </>
     ),
     correct: 'display: flex'
@@ -58,10 +60,8 @@ const quests: Quest[] = [
     boardComponents: (
       <>
         <CarComponent 
-          colorP='#3360b5' 
-          colorS='#3360b5' 
           idSuffix='1' 
-          className='w-[12%] h-[23%] min-w-[40px] min-h-[20px] rotate-90 ' 
+          className='w-[12%] h-[23%] min-w-[40px] min-h-[20px] rotate-90 z-20 ' 
         />
         <CarComponent 
           colorP='#943e3e' 
@@ -81,6 +81,11 @@ const quests: Quest[] = [
           idSuffix='2' 
           className='w-[12%] h-[23%] min-w-[40px] min-h-[20px] rotate-290 absolute bottom-[16%] right-[25%]' 
         />
+
+        <div
+            className="absolute z-10 w-[12%] h-[26%] top-[-1.5%] right-[0%] border-[5px] border-dashed border-[#ffed4e] rotate-90"
+            style={{ backgroundColor: 'rgba(247, 206, 0, 0.3)' }}
+          />
       </>
     ),
     correct: 'justify-content: center'
@@ -96,7 +101,8 @@ const quests: Quest[] = [
     boardComponents: (
       <>
         <CarComponent 
-          className='w-[12%] h-[23%] min-w-[40px] min-h-[20px]  mb-5'
+          
+          className='w-[12%] h-[23%] min-w-[40px] min-h-[20px]  mb-5 z-20'
         />
 
         <CarComponent
@@ -116,6 +122,11 @@ const quests: Quest[] = [
           colorS='#aaf875' 
           className='w-[12%] h-[23%] min-w-[40px] min-h-[20px] absolute top-[28%] left-[0%] rotate-15 '
         />
+          <div
+            className="absolute z-10 w-[12%] h-[26%] bottom-[1%] right-[44%] border-[5px] border-dashed border-[#ffed4e]"
+            style={{ backgroundColor: 'rgba(247, 206, 0, 0.3)' }}
+          />
+  
       </>
     ),
     correct: 'display: flex'
@@ -134,9 +145,7 @@ const quests: Quest[] = [
   boardComponents: (
     <>
       <CarComponent 
-        colorP='#3eaf7c' 
-        colorS='#3eaf7c' 
-        className='w-[20%] h-[44%] min-w-[40px] min-h-[20px] rotate-90 ' 
+        className='w-[20%] h-[44%] min-w-[40px] min-h-[20px] rotate-90 z-20' 
       />
 
       <CarComponent 
@@ -150,7 +159,10 @@ const quests: Quest[] = [
         colorS='#782961' 
         className='w-[20%] h-[44%] min-w-[40px] min-h-[20px] rotate-90 absolute left-[5%] bottom-[58%]' 
       />
-
+      <div
+            className="absolute z-10 w-[10%] h-[50%] t  right-[45%] bottom-[-3%] border-[5px] border-dashed border-[#ffed4e] rotate-90"
+            style={{ backgroundColor: 'rgba(247, 206, 0, 0.3)' }}
+          />
     </>
   ),
   correct: 'align-items: center'

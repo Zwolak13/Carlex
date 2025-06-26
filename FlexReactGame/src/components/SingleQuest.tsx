@@ -77,9 +77,9 @@ export default function SingleQuest({
                     <Arrow color="#E2E8F0" className="w-5 h-5" onClick={handleIncrease}/>
                 </div>
             </div>
-            <div id="questInfo" className="flex flex-col justify-between h-50 bg-[#1A202C] m-5 mt-0 p-4">
+            <div id="questInfo" className="flex flex-col justify-between h-70 bg-[#1A202C] m-5 mt-0 px-4 pb-4 pt-2">
                 <div>
-                  <h1 className="text-xl text-white">{quest.title}</h1>
+                  <h1 className="text-xl text-white pb-2">{quest.title}</h1>
                   <span className="text-gray-300">{quest.description}</span>
                 </div>
 
@@ -88,7 +88,7 @@ export default function SingleQuest({
                 </p>
               </div>
 
-            <div id="questInputy" className="h-80 bg-amber-50 m-5 flex">
+            <div id="questInputy" className="h-78 bg-amber-50 m-5 flex">
                 <div className="h-full w-10 bg-[#4A5568] flex flex-col items-center p-3">
                         {spans}
                 </div>
