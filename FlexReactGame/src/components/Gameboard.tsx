@@ -17,6 +17,13 @@ const itemsMap = {
   'stretch': 'items-stretch',
 } as const;
 
+const directionMap = {
+  'row': 'flex-row',
+  'row-reverse': 'flex-row-reverse',
+  'column': 'flex-col',
+  'column-reverse': 'flex-col-reverse',
+} as const;
+
 export default function Gameboard(
   { answer, questLevel, ...props }: { answer: string; questLevel: number; } & React.HTMLAttributes<HTMLDivElement>
 ) {
@@ -33,6 +40,9 @@ export default function Gameboard(
         .replace(/align-items\s*:\s*(flex-start|flex-end|center|baseline|stretch)\s*/gi, (_, val) => {
           return itemsMap[val.toLowerCase() as keyof typeof itemsMap] || '';
         })
+        .replace(/flex-direction\s*:\s*(row|row-reverse|column|column-reverse)\s*/gi, (_, val) => {
+          return directionMap[val.toLowerCase() as keyof typeof directionMap] || '';
+        })
     )
     .join(' ');
 
@@ -43,6 +53,7 @@ export default function Gameboard(
     .filter(token => {
       const isJustify = token.startsWith("justify-");
       const isItems = token.startsWith("items-");
+      const isDirection = token.startsWith("flex-") && (token.includes("row") || token.includes("col"));
 
       const hasCustomJustify = trimmedAnswerTokens.some(val =>
         /^justify-(start|end|center|between|around|evenly)$/.test(val)
@@ -50,9 +61,13 @@ export default function Gameboard(
       const hasCustomItems = trimmedAnswerTokens.some(val =>
         /^items-(start|end|center|baseline|stretch)$/.test(val)
       );
+       const hasCustomDirection = trimmedAnswerTokens.some(val =>
+        /^flex-(row|row-reverse|col|col-reverse)$/.test(val)
+      );
 
       if (isJustify && hasCustomJustify) return false;
       if (isItems && hasCustomItems) return false;
+      if (isDirection && hasCustomDirection) return false;
       return true;
     })
     .join(" ");

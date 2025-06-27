@@ -2,6 +2,7 @@ import LEVELONE from '../assets/Level1.svg'
 import LEVELTWO from '../assets/Level2.svg'
 import LEVELTHREE from '../assets/Level3.svg'
 import LEVELFOUR from '../assets/Level4.svg'
+import LEVELFIVE from '../assets/Level5.svg'
 import CarComponent from "../components/Car";
 import CodeSample from '../components/Formatting/CodeSample';
 
@@ -21,7 +22,7 @@ const quests: Quest[] = [
     id: 0,
     title: 'Flex - Arrange Cars Side by Side',
     values: [],
-    bonusValues: 'md:gap-[15%] gap-[15%]  mx-[5%] pl-10 md:pl-15  pt-5',
+    bonusValues: 'md:gap-[15%] gap-[15%]  mx-[5%] pl-[6%]  pt-[2%]',
     description: <span>You have multiple cars positioned one behind the other in a single line. However, the road has multiple lanes. Your task is to use CSS <CodeSample >display: flex;</CodeSample> to arrange the cars side by side in a row, so that they appear next to each other horizontally, rather than stacked vertically.</span>,
     levelMap: LEVELONE,
     boardComponents: (
@@ -36,20 +37,37 @@ const quests: Quest[] = [
           colorP='#51a7c9' 
           colorS='#51a7c9' 
           idSuffix='2' 
-          className='w-[12%] h-[23%] min-w-[40px] min-h-[20px] mb-3' 
+          className='w-[12%] h-[23%] min-w-[40px] min-h-[20px] mb-3 z-20' 
         />
         <CarComponent 
         colorP='#943e3e'
         colorS='#943e3e'
-          className='w-[12%] h-[23%] min-w-[40px] min-h-[20px] mb-3'
+          className='w-[12%] h-[23%] min-w-[40px] min-h-[20px] mb-3 z-20'
         />
         <CarComponent 
-          className='w-[12%] h-[23%] min-w-[40px] min-h-[20px] mb-3'
+          className='w-[12%] h-[23%] min-w-[40px] min-h-[20px] mb-3 z-20'
         /> 
+
+        <div
+            className="absolute z-10 w-[12%] h-[26%] top-[1%] right-[6%] border-[5px] border-dashed border-[#ffed4e]"
+            style={{ backgroundColor: 'rgba(247, 206, 0, 0.3)' }}
+          />
+          <div
+            className="absolute z-10 w-[12%] h-[26%] top-[1%] left-[6%] border-[5px] border-dashed border-[#15a305]"
+            style={{ backgroundColor: 'rgba(21, 163, 5, 0.3)' }}
+          />
+          <div
+            className="absolute z-10 w-[12%] h-[26%] top-[1%] left-[31%] border-[5px] border-dashed border-[#51a7c9]"
+            style={{ backgroundColor: 'rgba(81, 167, 201, 0.3)' }}
+          />
+          <div
+            className="absolute z-10 w-[12%] h-[26%] top-[1%] right-[31%] border-[5px] border-dashed border-[#943e3e]"
+            style={{ backgroundColor: 'rgba(148, 62, 62, 0.3)' }}
+          />
       </>
     ),
     correct: 'display: flex'
-  },
+  }, 
   {
     id: 1,
     title: 'Justify Content - Move Car to Parking Spot',
@@ -166,7 +184,58 @@ const quests: Quest[] = [
     </>
   ),
   correct: 'align-items: center'
-}
+},
+{
+    id: 4,
+    title: 'Flex Direction - Reverse the Cars',
+    values: ['display: flex;', 'algin-items: center;'],
+    bonusValues: 'flex items-center pt-[2%] px-[10%] gap-[10%] ',
+    description: <span> The cars are currently positioned on the wrong side of the road. Use CSS <CodeSample>flex-direction: row-reverse;</CodeSample> to correct their direction and ensure they're driving on the proper side. </span>,
+    levelMap: LEVELFIVE,
+    boardComponents: (
+      <>
+        <CarComponent 
+          colorP='#15a305' 
+          colorS='#15a305' 
+          idSuffix='1' 
+          className='w-[12%] h-[23%] min-w-[40px] min-h-[20px] mb-3 z-20' 
+        />
+        <CarComponent 
+          colorP='#51a7c9' 
+          colorS='#51a7c9' 
+          idSuffix='2' 
+          className='w-[12%] h-[23%] min-w-[40px] min-h-[20px] mb-3 z-20' 
+        />
+        <div className='w-[12%] h-[23%]'/>
+        <CarComponent 
+        colorP='#943e3e'
+        colorS='#943e3e'
+          className='w-[12%] h-[23%] min-w-[40px] min-h-[20px] mb-3 rotate-180 z-20'
+        />
+        <CarComponent 
+          className='w-[12%] h-[23%] min-w-[40px] min-h-[20px] mb-3 rotate-180 z-20'
+        />
+        <div
+            className="absolute z-10 w-[12%] h-[26%] bottom-[37%] left-[9%] border-[5px] border-dashed border-[#ffed4e]"
+            style={{ backgroundColor: 'rgba(247, 206, 0, 0.3)' }}
+          />
+          <div
+            className="absolute z-10 w-[12%] h-[26%] bottom-[37%] right-[9%] border-[5px] border-dashed border-[#15a305]"
+            style={{ backgroundColor: 'rgba(21, 163, 5, 0.3)' }}
+          />
+          <div
+            className="absolute z-10 w-[12%] h-[26%] bottom-[37%] right-[26.5%] border-[5px] border-dashed border-[#51a7c9]"
+            style={{ backgroundColor: 'rgba(81, 167, 201, 0.3)' }}
+          />
+          <div
+            className="absolute z-10 w-[12%] h-[26%] bottom-[37%] left-[26.5%] border-[5px] border-dashed border-[#943e3e]"
+            style={{ backgroundColor: 'rgba(148, 62, 62, 0.3)' }}
+          />
+         
+      </>
+    ),
+    correct: 'display: flex'
+  },
 ]
 
 export default quests;

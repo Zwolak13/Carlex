@@ -1,35 +1,39 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
-  <!-- Tło - zieleń wokół -->
-  <rect width="800" height="600" fill="#3a7f3a"></rect>
-  <!-- Droga wjazdowa po lewej (120x100) -->
-  <rect x="0" y="60" width="120" height="100" fill="#555"></rect>
-  <line x1="0" y1="110" x2="120" y2="110" stroke="#fff" stroke-width="4" stroke-dasharray="15 10"></line>
+
+  <rect width="800" height="600" fill="#3a7f3a"/>
+  
+
+  <rect x="0" y="60" width="120" height="100" fill="#404040"/>
+  <line x1="0" y1="110" x2="120" y2="110" stroke="#ffffff" stroke-width="4" stroke-dasharray="30,20"/>
+  
   <!-- Łączenie drogi i parkingu - uzupełnienie przerwy kolorem drogi -->
-  <rect x="120" y="60" width="5" height="100" fill="#555"></rect>
-  <!-- Krawężnik parkingu po lewej z przerwą na wjazd -->
-  <rect x="120" y="160" width="5" height="360" fill="#ccc"></rect>
-  <!-- Parking po prawej (600x460), wyrównany do góry z drogą -->
-  <rect x="125" y="60" width="595" height="460" fill="#666"></rect>
-  <!-- Krawężnik parkingu po prawej -->
-  <rect x="715" y="60" width="5" height="460" fill="#ccc"></rect>
-  <!-- Krawężniki na górze -->
-  <rect x="120" y="60" width="600" height="5" fill="#ccc"></rect>
-  <!-- Krawężniki na dole -->
-  <rect x="120" y="520" width="600" height="5" fill="#ccc"></rect>
-  <!-- Linie miejsc parkingowych poziome po prawej -->
-  <line x1="540" y1="70" x2="700" y2="70" stroke="#fff" stroke-width="2"></line>
-  <line x1="540" y1="150" x2="700" y2="150" stroke="#fff" stroke-width="2"></line>
-  <line x1="540" y1="240" x2="700" y2="240" stroke="#fff" stroke-width="2"></line>
-  <line x1="540" y1="330" x2="700" y2="330" stroke="#fff" stroke-width="2"></line>
-  <line x1="540" y1="420" x2="700" y2="420" stroke="#fff" stroke-width="2"></line>
-  <line x1="540" y1="510" x2="700" y2="510" stroke="#fff" stroke-width="2"></line>
-  <!-- Linie miejsc parkingowych poziome po lewej -->
-  <line x1="140" y1="160" x2="300" y2="160" stroke="#fff" stroke-width="2"></line>
-  <line x1="140" y1="240" x2="300" y2="240" stroke="#fff" stroke-width="2"></line>
-  <line x1="140" y1="330" x2="300" y2="330" stroke="#fff" stroke-width="2"></line>
-  <line x1="140" y1="420" x2="300" y2="420" stroke="#fff" stroke-width="2"></line>
-  <line x1="140" y1="510" x2="300" y2="510" stroke="#fff" stroke-width="2"></line>
-  <!-- Znak "P" przy parkingu -->
-  <rect x="720" y="50" width="30" height="30" fill="#004aad" rx="5" ry="5"></rect>
+  <rect x="120" y="60" width="5" height="100" fill="#404040"/>
+  
+
+  <rect x="120" y="160" width="5" height="360" fill="#ffffff"/>
+
+  <rect x="125" y="60" width="595" height="460" fill="#404040"/>
+  
+
+  <rect x="715" y="60" width="5" height="460" fill="#ffffff"/>
+  <rect x="120" y="60" width="600" height="5" fill="#ffffff"/>
+  <rect x="120" y="520" width="600" height="5" fill="#ffffff"/>
+  
+
+  <line x1="540" y1="70" x2="700" y2="70" stroke="#ffffff" stroke-width="2"/>
+  <line x1="540" y1="150" x2="700" y2="150" stroke="#ffffff" stroke-width="2"/>
+  <line x1="540" y1="240" x2="700" y2="240" stroke="#ffffff" stroke-width="2"/>
+  <line x1="540" y1="330" x2="700" y2="330" stroke="#ffffff" stroke-width="2"/>
+  <line x1="540" y1="420" x2="700" y2="420" stroke="#ffffff" stroke-width="2"/>
+  <line x1="540" y1="510" x2="700" y2="510" stroke="#ffffff" stroke-width="2"/>
+  
+
+  <line x1="140" y1="160" x2="300" y2="160" stroke="#ffffff" stroke-width="2"/>
+  <line x1="140" y1="240" x2="300" y2="240" stroke="#ffffff" stroke-width="2"/>
+  <line x1="140" y1="330" x2="300" y2="330" stroke="#ffffff" stroke-width="2"/>
+  <line x1="140" y1="420" x2="300" y2="420" stroke="#ffffff" stroke-width="2"/>
+  <line x1="140" y1="510" x2="300" y2="510" stroke="#ffffff" stroke-width="2"/>
+
+  <rect x="720" y="50" width="30" height="30" fill="#004aad" rx="5" ry="5"/>
   <text x="735" y="73" fill="white" font-family="Arial" font-size="24" font-weight="bold" text-anchor="middle" dominant-baseline="middle">P</text>
 </svg>

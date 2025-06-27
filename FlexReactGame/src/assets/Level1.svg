@@ -1,15 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
-  <!-- Tło jezdni -->
-  <rect width="800" height="600" fill="#7a7a7a"></rect>
+  <!-- Tło zielone -->  <rect width="800" height="600" fill="#3a7f3a"/>
 
-  <!-- Pobocze - pas zieleni -->
-  <rect x="0" y="0" width="50" height="600" fill="#3a7f3a"></rect>
-  <rect x="750" y="0" width="50" height="600" fill="#3a7f3a"></rect>
+  <rect x="50" y="0" width="700" height="600" fill="#404040"/>
+  
 
-  <!-- Linie pasów (4 pasy równe) -->
-  <!-- Szerokość jednego pasa = (700 / 4) = 175 px -->
 
-  <line x1="225" y1="0" x2="225" y2="600" stroke="#ffffff" stroke-width="4" stroke-dasharray="20, 20"></line>
-  <line x1="400" y1="0" x2="400" y2="600" stroke="#ffffff" stroke-width="4" stroke-dasharray="20, 20"></line>
-  <line x1="575" y1="0" x2="575" y2="600" stroke="#ffffff" stroke-width="4" stroke-dasharray="20, 20"></line>
+  <line x1="225" y1="0" x2="225" y2="600" stroke="#ffffff" stroke-width="4" stroke-dasharray="30,20"/>
+  <line x1="400" y1="0" x2="400" y2="600" stroke="#ffffff" stroke-width="4" stroke-dasharray="30,20"/>
+  <line x1="575" y1="0" x2="575" y2="600" stroke="#ffffff" stroke-width="4" stroke-dasharray="30,20"/>
+  
+
+  <line x1="50" y1="0" x2="50" y2="600" stroke="#ffffff" stroke-width="6"/>
+  <line x1="750" y1="0" x2="750" y2="600" stroke="#ffffff" stroke-width="6"/>
 </svg>
