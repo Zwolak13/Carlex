@@ -24,9 +24,16 @@ const directionMap = {
   'column-reverse': 'flex-col-reverse',
 } as const;
 
+function extractGapValue(input: string): string | undefined {
+  const match = input.match(/gap\s*:\s*([^\s;]+)/i);
+  return match ? match[1].trim() : undefined;
+}
+
 export default function Gameboard(
   { answer, questLevel, ...props }: { answer: string; questLevel: number; } & React.HTMLAttributes<HTMLDivElement>
 ) {
+  const gapValue = extractGapValue(answer);
+
   const trimmedAnswer = answer
     .split(/[\n;]+/)
     .map(line => line.trim())
@@ -43,6 +50,8 @@ export default function Gameboard(
         .replace(/flex-direction\s*:\s*(row|row-reverse|column|column-reverse)\s*/gi, (_, val) => {
           return directionMap[val.toLowerCase() as keyof typeof directionMap] || '';
         })
+        // remove gap processing, since it's now handled via `style`
+        .replace(/gap\s*:\s*[^;\n]+/gi, '')
     )
     .join(' ');
 
@@ -54,6 +63,7 @@ export default function Gameboard(
       const isJustify = token.startsWith("justify-");
       const isItems = token.startsWith("items-");
       const isDirection = token.startsWith("flex-") && (token.includes("row") || token.includes("col"));
+      const isGap = token.startsWith("gap-");
 
       const hasCustomJustify = trimmedAnswerTokens.some(val =>
         /^justify-(start|end|center|between|around|evenly)$/.test(val)
@@ -61,13 +71,15 @@ export default function Gameboard(
       const hasCustomItems = trimmedAnswerTokens.some(val =>
         /^items-(start|end|center|baseline|stretch)$/.test(val)
       );
-       const hasCustomDirection = trimmedAnswerTokens.some(val =>
+      const hasCustomDirection = trimmedAnswerTokens.some(val =>
         /^flex-(row|row-reverse|col|col-reverse)$/.test(val)
       );
+      const hasCustomGap = !!gapValue;
 
       if (isJustify && hasCustomJustify) return false;
       if (isItems && hasCustomItems) return false;
       if (isDirection && hasCustomDirection) return false;
+      if (isGap && hasCustomGap) return false;
       return true;
     })
     .join(" ");
@@ -81,7 +93,10 @@ export default function Gameboard(
             backgroundImage: `url("${QUESTS[questLevel]?.levelMap}")`,
           }}
         >
-          <div className={`absolute inset-0 ${finalBonus} ${trimmedAnswer}`}>
+          <div
+            className={`absolute inset-0 ${finalBonus} ${trimmedAnswer}`}
+            style={gapValue ? { gap: gapValue } : undefined}
+          >
             {QUESTS[questLevel].boardComponents}
           </div>
         </div>

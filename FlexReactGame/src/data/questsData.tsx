@@ -14,7 +14,7 @@ export interface Quest {
   description: React.ReactNode;
   levelMap: string;
   boardComponents: React.ReactNode;
-  correct: string;
+  correct: string[];
 }
 
 const quests: Quest[] = [
@@ -31,21 +31,21 @@ const quests: Quest[] = [
           colorP='#15a305' 
           colorS='#15a305' 
           idSuffix='1' 
-          className='w-[12%] h-[23%] min-w-[40px] min-h-[20px] mb-3 z-20' 
+          className='w-[12%] h-[23%] min-w-[30px] min-h-[15px] mb-3 z-20' 
         />
         <CarComponent 
           colorP='#51a7c9' 
           colorS='#51a7c9' 
           idSuffix='2' 
-          className='w-[12%] h-[23%] min-w-[40px] min-h-[20px] mb-3 z-20' 
+          className='w-[12%] h-[23%] min-w-[30px] min-h-[15px] mb-3 z-20' 
         />
         <CarComponent 
         colorP='#943e3e'
         colorS='#943e3e'
-          className='w-[12%] h-[23%] min-w-[40px] min-h-[20px] mb-3 z-20'
+          className='w-[12%] h-[23%] min-w-[30px] min-h-[15px] mb-3 z-20'
         />
         <CarComponent 
-          className='w-[12%] h-[23%] min-w-[40px] min-h-[20px] mb-3 z-20'
+          className='w-[12%] h-[23%] min-w-[20px] min-h-[10px] mb-3 z-20'
         /> 
 
         <div
@@ -66,7 +66,7 @@ const quests: Quest[] = [
           />
       </>
     ),
-    correct: 'display: flex'
+    correct: ['display: flex','flex']
   }, 
   {
     id: 1,
@@ -106,7 +106,7 @@ const quests: Quest[] = [
           />
       </>
     ),
-    correct: 'justify-content: center'
+    correct: ['justify-content: flex-end','justify-end']
   },
   {
     id: 2,
@@ -141,13 +141,13 @@ const quests: Quest[] = [
           className='w-[12%] h-[23%] min-w-[40px] min-h-[20px] absolute top-[28%] left-[0%] rotate-15 '
         />
           <div
-            className="absolute z-10 w-[12%] h-[26%] bottom-[1%] right-[44%] border-[5px] border-dashed border-[#ffed4e]"
+            className="absolute z-10 w-[12%] h-[26%] bottom-[5%] right-[44%] border-[5px] sm:bottom-[1%] border-dashed border-[#ffed4e]"
             style={{ backgroundColor: 'rgba(247, 206, 0, 0.3)' }}
           />
   
       </>
     ),
-    correct: 'display: flex'
+    correct: ['justify-content: center','justify-center']
   },
   {
   id: 3,
@@ -175,7 +175,7 @@ const quests: Quest[] = [
       <CarComponent 
         colorP='#782961' 
         colorS='#782961' 
-        className='w-[20%] h-[44%] min-w-[40px] min-h-[20px] rotate-90 absolute left-[5%] bottom-[58%]' 
+        className='w-[20%] h-[44%] min-w-[30px] min-h-[15px] rotate-90 absolute left-[5%] bottom-[58%]' 
       />
       <div
             className="absolute z-10 w-[10%] h-[50%] t  right-[45%] bottom-[-3%] border-[5px] border-dashed border-[#ffed4e] rotate-90"
@@ -183,7 +183,7 @@ const quests: Quest[] = [
           />
     </>
   ),
-  correct: 'align-items: center'
+  correct: ['align-items: flex-end','items-end']
 },
 {
     id: 4,
@@ -216,26 +216,77 @@ const quests: Quest[] = [
           className='w-[12%] h-[23%] min-w-[40px] min-h-[20px] mb-3 rotate-180 z-20'
         />
         <div
-            className="absolute z-10 w-[12%] h-[26%] bottom-[37%] left-[9%] border-[5px] border-dashed border-[#ffed4e]"
+            className="absolute z-10 w-[12%] h-[26%] bottom-[37%] left-[10%] sm:left-[9%] border-[5px] border-dashed border-[#ffed4e]"
             style={{ backgroundColor: 'rgba(247, 206, 0, 0.3)' }}
           />
           <div
-            className="absolute z-10 w-[12%] h-[26%] bottom-[37%] right-[9%] border-[5px] border-dashed border-[#15a305]"
+            className="absolute z-10 w-[12%] h-[26%] bottom-[37%] right-[10%] sm:right-[26.5%] border-[5px] border-dashed border-[#15a305]"
             style={{ backgroundColor: 'rgba(21, 163, 5, 0.3)' }}
           />
           <div
-            className="absolute z-10 w-[12%] h-[26%] bottom-[37%] right-[26.5%] border-[5px] border-dashed border-[#51a7c9]"
+            className="absolute z-10 w-[12%] h-[26%] bottom-[37%] right-[28.5%] sm:right-[26.5%] border-[5px] border-dashed border-[#51a7c9]"
             style={{ backgroundColor: 'rgba(81, 167, 201, 0.3)' }}
           />
           <div
-            className="absolute z-10 w-[12%] h-[26%] bottom-[37%] left-[26.5%] border-[5px] border-dashed border-[#943e3e]"
+            className="absolute z-10 w-[12%] h-[26%] bottom-[37%] left-[28.5%] left-[26.5%] border-[5px] border-dashed border-[#943e3e]"
             style={{ backgroundColor: 'rgba(148, 62, 62, 0.3)' }}
           />
          
       </>
     ),
-    correct: 'display: flex'
+    correct: ['flex-direction: row-reverse','flex-row-reverse']
   },
+
+  {
+    id: 5,
+    title: 'Gap - Maintain Safe Distance',
+    values: ['display: flex;', 'align-items: center;'],
+    bonusValues: ' items-center  mx-[5%] pl-[6%]  pt-[2%] flex',
+    description: <span>Cars are driving too close together on the highway! Use <CodeSample>gap: 15%;</CodeSample> to maintain safe following distance.</span>,
+    levelMap: LEVELONE,
+    boardComponents: (
+      <>
+        <CarComponent 
+          colorP='#15a305' 
+          colorS='#15a305' 
+          idSuffix='1' 
+          className='w-[12%] h-[23%] min-w-[40px] min-h-[20px] mb-3 z-20' 
+        />
+        <CarComponent 
+          colorP='#51a7c9' 
+          colorS='#51a7c9' 
+          idSuffix='2' 
+          className='w-[12%] h-[23%] min-w-[40px] min-h-[20px] mb-3 z-20' 
+        />
+        <CarComponent 
+        colorP='#943e3e'
+        colorS='#943e3e'
+          className='w-[12%] h-[23%] min-w-[40px] min-h-[20px] mb-3 z-20'
+        />
+        <CarComponent 
+          className='w-[12%] h-[23%] min-w-[40px] min-h-[20px] mb-3 z-20'
+        /> 
+
+        <div
+            className="absolute z-10 w-[12%] h-[26%] top-[38%] right-[6%] border-[5px] border-dashed border-[#ffed4e]"
+            style={{ backgroundColor: 'rgba(247, 206, 0, 0.3)' }}
+          />
+          <div
+            className="absolute z-10 w-[12%] h-[26%] top-[38%] left-[6%] border-[5px] border-dashed border-[#15a305]"
+            style={{ backgroundColor: 'rgba(21, 163, 5, 0.3)' }}
+          />
+          <div
+            className="absolute z-10 w-[12%] h-[26%] top-[38%] left-[31%] border-[5px] border-dashed border-[#51a7c9]"
+            style={{ backgroundColor: 'rgba(81, 167, 201, 0.3)' }}
+          />
+          <div
+            className="absolute z-10 w-[12%] h-[26%] top-[38%] right-[31%] border-[5px] border-dashed border-[#943e3e]"
+            style={{ backgroundColor: 'rgba(148, 62, 62, 0.3)' }}
+          />
+      </>
+    ),
+    correct: ['gap: 140px', 'gap: 15%','gap-[140px]','gap-[15%]','gap-35']
+  }, 
 ]
 
 export default quests;

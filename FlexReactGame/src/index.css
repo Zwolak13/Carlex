@@ -2,6 +2,7 @@
 
 @source inline("justify-{start,end,center,between,around,evenly}");
 @source inline("items-{start,end,center,baseline,stretch}");
+@source inline("gap-{0,0.5,1,1,5,2,2.5,3,4,5,6,7,8,9,10,12,16,20,24,32,35,36,40,48,64,128}");
 
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;

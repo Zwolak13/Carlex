@@ -1,0 +1,97 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Tło - zielone pola -->
+  <rect width="400" height="300" fill="#2d5a27"/>
+  
+  <!-- Główna autostrada - 3 pasy -->
+  <rect x="0" y="100" width="400" height="100" fill="#4a4a4a"/>
+  
+  <!-- Pasy ruchu - jaśniejsze -->
+  <rect x="0" y="110" width="400" height="26" fill="#5a5a5a"/>
+  <rect x="0" y="137" width="400" height="26" fill="#5a5a5a"/>
+  <rect x="0" y="164" width="400" height="26" fill="#5a5a5a"/>
+  
+  <!-- Linie między pasami - białe ciągłe -->
+  <rect x="0" y="136" width="400" height="1" fill="white"/>
+  <rect x="0" y="163" width="400" height="1" fill="white"/>
+  
+  <!-- Linie przerywane na środku każdego pasa -->
+  <defs>
+    <pattern id="dashed-center" patternUnits="userSpaceOnUse" width="30" height="2">
+      <rect width="15" height="1" fill="white"/>
+      <rect x="15" width="15" height="1" fill="transparent"/>
+    </pattern>
+  </defs>
+  
+  <!-- Środkowe linie przerywane -->
+  <rect x="0" y="122" width="400" height="1" fill="url(#dashed-center)"/>
+  <rect x="0" y="149" width="400" height="1" fill="url(#dashed-center)"/>
+  <rect x="0" y="176" width="400" height="1" fill="url(#dashed-center)"/>
+  
+  <!-- Krawędzie autostrady -->
+  <rect x="0" y="100" width="400" height="2" fill="white"/>
+  <rect x="0" y="198" width="400" height="2" fill="white"/>
+  
+  <!-- Znaki bezpieczeństwa na poboczu -->
+  <g id="safety-sign-1">
+    <rect x="20" y="70" width="30" height="25" fill="#ffed4e" stroke="#333" stroke-width="1" rx="2"/>
+    <text x="35" y="85" text-anchor="middle" font-family="Arial" font-size="10" fill="black" font-weight="bold">!</text>
+    <text x="35" y="95" text-anchor="middle" font-family="Arial" font-size="6" fill="black">SAFE</text>
+  </g>
+  
+  <g id="safety-sign-2">
+    <rect x="350" y="205" width="30" height="25" fill="#ffed4e" stroke="#333" stroke-width="1" rx="2"/>
+    <text x="365" y="220" text-anchor="middle" font-family="Arial" font-size="8" fill="black">2 SEC</text>
+    <text x="365" y="230" text-anchor="middle" font-family="Arial" font-size="6" fill="black">RULE</text>
+  </g>
+  
+  <!-- Wskaźniki odległości (niewidoczne początkowo) -->
+  <g id="distance-indicators" opacity="0.3">
+    <!-- Strzałki pokazujące bezpieczną odległość -->
+    <defs>
+      <marker id="arrowhead" markerWidth="10" markerHeight="7" 
+              refX="9" refY="3.5" orient="auto">
+        <polygon points="0 0, 10 3.5, 0 7" fill="#ff6b6b" />
+      </marker>
+    </defs>
+    
+    <!-- Linie wskaźników odległości -->
+    <line x1="90" y1="80" x2="130" y2="80" stroke="#ff6b6b" stroke-width="2" 
+          marker-end="url(#arrowhead)" stroke-dasharray="5,5"/>
+    <line x1="170" y1="80" x2="210" y2="80" stroke="#ff6b6b" stroke-width="2" 
+          marker-end="url(#arrowhead)" stroke-dasharray="5,5"/>
+    
+    <text x="110" y="75" text-anchor="middle" font-family="Arial" font-size="8" fill="#ff6b6b">SAFE</text>
+    <text x="190" y="75" text-anchor="middle" font-family="Arial" font-size="8" fill="#ff6b6b">DISTANCE</text>
+  </g>
+  
+  <!-- Punkty orientacyjne na poboczach -->
+  <circle cx="50" cy="50" r="3" fill="#8bc34a"/>
+  <circle cx="150" cy="50" r="3" fill="#8bc34a"/>
+  <circle cx="250" cy="50" r="3" fill="#8bc34a"/>
+  <circle cx="350" cy="50" r="3" fill="#8bc34a"/>
+  
+  <circle cx="50" cy="250" r="3" fill="#8bc34a"/>
+  <circle cx="150" cy="250" r="3" fill="#8bc34a"/>
+  <circle cx="250" cy="250" r="3" fill="#8bc34a"/>
+  <circle cx="350" cy="250" r="3" fill="#8bc34a"/>
+  
+  <!-- Cienie pod samochodami (dla realizmu) -->
+  <ellipse cx="75" cy="155" rx="15" ry="5" fill="rgba(0,0,0,0.3)"/>
+  <ellipse cx="155" cy="155" rx="15" ry="5" fill="rgba(0,0,0,0.3)"/>
+  <ellipse cx="235" cy="155" rx="15" ry="5" fill="rgba(0,0,0,0.3)"/>
+  
+  <!-- Tekstury na trawie -->
+  <g opacity="0.1">
+    <circle cx="30" cy="30" r="2" fill="#1b4332"/>
+    <circle cx="80" cy="25" r="1.5" fill="#1b4332"/>
+    <circle cx="120" cy="35" r="2" fill="#1b4332"/>
+    <circle cx="300" cy="30" r="1.5" fill="#1b4332"/>
+    <circle cx="350" cy="40" r="2" fill="#1b4332"/>
+    
+    <circle cx="40" cy="270" r="2" fill="#1b4332"/>
+    <circle cx="90" cy="265" r="1.5" fill="#1b4332"/>
+    <circle cx="180" cy="275" r="2" fill="#1b4332"/>
+    <circle cx="280" cy="270" r="1.5" fill="#1b4332"/>
+    <circle cx="330" cy="280" r="2" fill="#1b4332"/>
+  </g>
+</svg>

@@ -1,6 +1,6 @@
 import Arrow from "./Arrow";
 import QUESTS from '../data/questsData'
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default function SingleQuest({
   questLevel,
@@ -14,7 +14,11 @@ export default function SingleQuest({
   answer: string;
 }){
 
-     const localStorageKey = 'questAnswers';
+  const [passedData, setPassedData] = useState<Record<number, boolean>>(() => {
+  return JSON.parse(localStorage.getItem('questPassed') || '{}');
+});
+
+   const localStorageKey = 'questAnswers';
 
   useEffect(() => {
     const storedAnswers = localStorage.getItem(localStorageKey);
@@ -37,6 +41,20 @@ export default function SingleQuest({
     const parsed = storedAnswers ? JSON.parse(storedAnswers) : {};
     parsed[questLevel] = answer;
     localStorage.setItem(localStorageKey, JSON.stringify(parsed));
+
+  const correctAnswers: string[] = QUESTS[questLevel].correct || [];
+  const isPassed = correctAnswers
+    .map(ans => ans.replace(/\s+/g, '').toLowerCase())
+    .includes(answer.trim().replace(/\s+/g, '').toLowerCase());
+
+ 
+  if (isPassed) {
+    const storedPassed = localStorage.getItem('questPassed');
+    const parsedPassed: Record<number, boolean> = storedPassed ? JSON.parse(storedPassed) : {};
+    parsedPassed[questLevel] = true;
+    localStorage.setItem('questPassed', JSON.stringify(parsedPassed));
+    setPassedData(parsedPassed);
+  }
   }, [answer, questLevel]);
 
 
@@ -54,7 +72,7 @@ export default function SingleQuest({
     }
 
     function handleIncrease(){
-        if(questLevel<QUESTS.length-1){
+        if(questLevel<QUESTS.length-1 && passedData[questLevel]){
             setQuestLevel((prev: number) => prev+1);
         }
     }
@@ -94,13 +112,16 @@ export default function SingleQuest({
                 <div className="h-full w-10 bg-[#4A5568] flex flex-col items-center p-3">
                         {spans}
                 </div>
-                <div className="bg-[#1A202C] h-full w-full p-3 flex flex-col text-[#E2E8F0]">
-                    <span>#road {"{"}</span>
-                    {quest.values.map((val, index) => (
-                        <span className="ml-4" key={index}>{val}</span>
-                    ))}
-                    <input className="w-1/2 ml-4" type="text" value={answer} onChange={event => handleAnswerChange(event)}/>
-                    <span> {"}"}</span>
+                <div className="bg-[#1A202C] h-full w-full p-3 flex flex-col justify-between ">
+                    <div className="flex flex-col text-[#E2E8F0]">
+                        <span>#road {"{"}</span>
+                      {quest.values.map((val, index) => (
+                          <span className="ml-4" key={index}>{val}</span>
+                      ))}
+                      <input className="w-1/2 ml-4" type="text" value={answer} onChange={event => handleAnswerChange(event)}/>
+                      <span> {"}"}</span>
+                    </div>
+                    {questLevel != QUESTS.length-1 && <button type="button" className={`${passedData[questLevel] ? 'h-[15%] w-20 bg-[#4A5568] self-end text-[120%] text-orange-500 font-bold' : 'h-[15%] w-20 bg-[#4A5568] self-end text-[120%] text-red-200 font-bold'}`}>Next</button>}
                 </div>
                 
             </div>
