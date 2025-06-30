@@ -96,7 +96,7 @@ export default function SingleQuest({
                     <Arrow color="#E2E8F0" className="w-5 h-5" onClick={handleIncrease}/>
                 </div>
             </div>
-            <div id="questInfo" className="flex flex-col justify-between h-60 bg-[#1A202C] m-5 mt-0 px-4 pb-4 pt-2">
+            <div id="questInfo" className="flex flex-col justify-between h-90 sm:h-60 bg-[#1A202C] m-5 mt-0 px-4 pb-4 pt-2">
                 <div>
                   <h1 className="text-xl text-white pb-2">{quest.title}</h1>
                   <span className="text-gray-300">{quest.description}</span>
@@ -121,7 +121,7 @@ export default function SingleQuest({
                       <input className="w-1/2 ml-4" type="text" value={answer} onChange={event => handleAnswerChange(event)}/>
                       <span> {"}"}</span>
                     </div>
-                    {questLevel != QUESTS.length-1 && <button type="button" className={`${passedData[questLevel] ? 'h-[15%] w-20 bg-[#4A5568] self-end text-[120%] text-orange-500 font-bold' : 'h-[15%] w-20 bg-[#4A5568] self-end text-[120%] text-red-200 font-bold'}`}>Next</button>}
+                    {questLevel != QUESTS.length-1 && <button type="button" onClick={handleIncrease} className={`trantransition duration-300 ${passedData[questLevel] ? 'h-[15%] w-20 bg-[#4A5568] self-end text-[120%] text-orange-500 font-bold' : 'h-[15%] w-20 opacity-50  bg-[#4A5568] self-end text-[120%] text-red-200 font-bold'}`}>Next</button>}
                 </div>
                 
             </div>

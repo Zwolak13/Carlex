@@ -88,7 +88,7 @@ export default function Gameboard(
     <div {...props}>
       <div className="w-full max-w-6xl mx-auto">
         <div
-          className="relative w-full aspect-[4/3] bg-no-repeat bg-contain bg-center border-8 border-[#4A5568]"
+          className="relative w-full aspect-[4/3]  bg-no-repeat bg-contain bg-center border-8 border-[#4A5568]"
           style={{
             backgroundImage: `url("${QUESTS[questLevel]?.levelMap}")`,
           }}

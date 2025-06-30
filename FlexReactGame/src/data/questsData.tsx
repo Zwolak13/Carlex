@@ -22,7 +22,7 @@ const quests: Quest[] = [
     id: 0,
     title: 'Flex - Arrange Cars Side by Side',
     values: [],
-    bonusValues: 'md:gap-[15%] gap-[15%]  mx-[5%] pl-[6%]  pt-[2%]',
+    bonusValues: 'md:gap-[15%] gap-[17%]  sm:gap-[15%] mx-[5%] pl-[6%]  pt-[3%] sm:pt-[2%]',
     description: <span>You have multiple cars positioned one behind the other in a single line. However, the road has multiple lanes. Your task is to use CSS <CodeSample >display: flex;</CodeSample> to arrange the cars side by side in a row, so that they appear next to each other horizontally, rather than stacked vertically.</span>,
     levelMap: LEVELONE,
     boardComponents: (
@@ -31,21 +31,21 @@ const quests: Quest[] = [
           colorP='#15a305' 
           colorS='#15a305' 
           idSuffix='1' 
-          className='w-[12%] h-[23%] min-w-[30px] min-h-[15px] mb-3 z-20' 
+          className='w-[10%] h-[20%] sm:w-[12%] sm:h-[23%] min-w-[30px]  min-h-[15px] mb-3 z-20' 
         />
         <CarComponent 
           colorP='#51a7c9' 
           colorS='#51a7c9' 
           idSuffix='2' 
-          className='w-[12%] h-[23%] min-w-[30px] min-h-[15px] mb-3 z-20' 
+          className='w-[10%] h-[20%] sm:w-[12%] sm:h-[23%] min-w-[30px] min-h-[15px]  mb-3 z-20' 
         />
         <CarComponent 
         colorP='#943e3e'
         colorS='#943e3e'
-          className='w-[12%] h-[23%] min-w-[30px] min-h-[15px] mb-3 z-20'
+          className='w-[10%] h-[20%] sm:w-[12%] sm:h-[23%] min-w-[30px] min-h-[15px] mb-3 z-20'
         />
         <CarComponent 
-          className='w-[12%] h-[23%] min-w-[20px] min-h-[10px] mb-3 z-20'
+          className='w-[10%] h-[20%] sm:w-[12%] sm:h-[23%] min-w-[20px] min-h-[10px] mb-3 z-20'
         /> 
 
         <div
@@ -72,7 +72,7 @@ const quests: Quest[] = [
     id: 1,
     title: 'Justify Content - Move Car to Parking Spot',
     values: ['display: flex;'],
-    bonusValues: 'flex ml-[10%] mr-[18%] mt-[5%]',
+    bonusValues: 'flex ml-[10%] mr-[18%]  mt-[5%]',
     description: <span>You have a car positioned at the entrance of the parking lot. Your task is to use CSS <CodeSample >justify-content: flex-end;</CodeSample> to move the car horizontally into the correct parking spot at the far end of the lot.</span>,
     levelMap: LEVELTWO,
     boardComponents: (
@@ -90,18 +90,18 @@ const quests: Quest[] = [
          <CarComponent 
           colorP='#603b69' 
           colorS='#603b69' 
-          idSuffix='2' 
+          idSuffix='3' 
           className='w-[12%] h-[23%] min-w-[40px] min-h-[20px] rotate-270 absolute top-[48%] right-[3%]' 
         />
         <CarComponent 
           colorP='#a3e848' 
           colorS='#a3e848' 
-          idSuffix='2' 
+          idSuffix='4' 
           className='w-[12%] h-[23%] min-w-[40px] min-h-[20px] rotate-290 absolute bottom-[16%] right-[25%]' 
         />
 
         <div
-            className="absolute z-10 w-[12%] h-[26%] top-[-1.5%] right-[0%] border-[5px] border-dashed border-[#ffed4e] rotate-90"
+            className="absolute z-10 w-[12%] h-[26%] top-[-1.5%] right-[2%] sm:right-[0%] border-[5px] border-dashed border-[#ffed4e] rotate-90"
             style={{ backgroundColor: 'rgba(247, 206, 0, 0.3)' }}
           />
       </>
@@ -220,7 +220,7 @@ const quests: Quest[] = [
             style={{ backgroundColor: 'rgba(247, 206, 0, 0.3)' }}
           />
           <div
-            className="absolute z-10 w-[12%] h-[26%] bottom-[37%] right-[10%] sm:right-[26.5%] border-[5px] border-dashed border-[#15a305]"
+            className="absolute z-10 w-[12%] h-[26%] bottom-[37%] right-[10%] sm:right-[9%] border-[5px] border-dashed border-[#15a305]"
             style={{ backgroundColor: 'rgba(21, 163, 5, 0.3)' }}
           />
           <div
@@ -228,7 +228,7 @@ const quests: Quest[] = [
             style={{ backgroundColor: 'rgba(81, 167, 201, 0.3)' }}
           />
           <div
-            className="absolute z-10 w-[12%] h-[26%] bottom-[37%] left-[28.5%] left-[26.5%] border-[5px] border-dashed border-[#943e3e]"
+            className="absolute z-10 w-[12%] h-[26%] bottom-[37%] left-[28.5%] sm:left-[26.5%] border-[5px] border-dashed border-[#943e3e]"
             style={{ backgroundColor: 'rgba(148, 62, 62, 0.3)' }}
           />
          
@@ -241,7 +241,7 @@ const quests: Quest[] = [
     id: 5,
     title: 'Gap - Maintain Safe Distance',
     values: ['display: flex;', 'align-items: center;'],
-    bonusValues: ' items-center  mx-[5%] pl-[6%]  pt-[2%] flex',
+    bonusValues: ' items-center  mx-[5%] pl-[2%] sm:pl-[6%] pt-[2%] flex',
     description: <span>Cars are driving too close together on the highway! Use <CodeSample>gap: 15%;</CodeSample> to maintain safe following distance.</span>,
     levelMap: LEVELONE,
     boardComponents: (
@@ -268,19 +268,19 @@ const quests: Quest[] = [
         /> 
 
         <div
-            className="absolute z-10 w-[12%] h-[26%] top-[38%] right-[6%] border-[5px] border-dashed border-[#ffed4e]"
+            className="absolute z-10 w-[12%] h-[26%] top-[38%] right-[3%] sm:right-[6%] border-[5px] border-dashed border-[#ffed4e]"
             style={{ backgroundColor: 'rgba(247, 206, 0, 0.3)' }}
           />
           <div
-            className="absolute z-10 w-[12%] h-[26%] top-[38%] left-[6%] border-[5px] border-dashed border-[#15a305]"
+            className="absolute z-10 w-[12%] h-[26%] top-[38%] left-[3%] sm:left-[6%] border-[5px] border-dashed border-[#15a305]"
             style={{ backgroundColor: 'rgba(21, 163, 5, 0.3)' }}
           />
           <div
-            className="absolute z-10 w-[12%] h-[26%] top-[38%] left-[31%] border-[5px] border-dashed border-[#51a7c9]"
+            className="absolute z-10 w-[12%] h-[26%] top-[38%] sm:left-[31%] left-[30%] border-[5px] border-dashed border-[#51a7c9]"
             style={{ backgroundColor: 'rgba(81, 167, 201, 0.3)' }}
           />
           <div
-            className="absolute z-10 w-[12%] h-[26%] top-[38%] right-[31%] border-[5px] border-dashed border-[#943e3e]"
+            className="absolute z-10 w-[12%] h-[26%] top-[38%] right-[30%] sm:right-[31%] border-[5px] border-dashed border-[#943e3e]"
             style={{ backgroundColor: 'rgba(148, 62, 62, 0.3)' }}
           />
       </>
